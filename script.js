@@ -146,7 +146,7 @@ function fillContent(content) {
         try {
             const imgSrc = formatImage(c.imagens);
             const editorias = formatEditorias(c.editorias);
-            const publishedDate = formatDate(c.data_publicacao);  // Corrigi o nome da função para corresponder ao resto do código
+            const publishedDate = formatDate(c.data_publicacao);
 
             li.innerHTML = `
                 <img src="${imgSrc}" alt="${c.titulo}">
@@ -172,8 +172,8 @@ function setPaginationButtons(content) {
     const ul = document.querySelector('#pagination');
     ul.innerHTML = "";
 
-    const actual = content.page;
-    const total = content.totalPages;
+    const actual = parseInt(content.page);
+    const total = parseInt(content.totalPages);
     const leftSize = 5;
     const rightSize = 4;
 
@@ -216,7 +216,7 @@ function setPage(e) {
     params.set('page', value);
 
     history.replaceState({}, "", `${location.pathname}?${params}`);
-    queryNews();
+    News();
 }
 
 function paginationStyle(pageNumber) {
@@ -228,5 +228,3 @@ function paginationStyle(pageNumber) {
         selectedButton.classList.add('pagination-selected');
     }
 }
-
-
