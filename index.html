@@ -11,7 +11,7 @@
         <h1>Portal de Notícias do IBGE</h1>
 
         <div id="form">
-            <form id="search-form" onsubmit="submitForm(event)">
+            <form id="search-form" onsubmit="formSubmit(event)">
                   <input id="search" type="text" placeholder="Buscar">
                   <button id="search-button" type="submit">🔍</button>
             </form>
@@ -49,7 +49,7 @@
                 </div>
 
                 <div>
-                    <label for="quantidade">Quatidade:</label>
+                    <label for="quantidade">Quantidade:</label>
                 <select name="quantidade" id="quantidade">
                     <option value="10" selected>10</option>
                 </select>
@@ -57,19 +57,19 @@
 
                 <div>
                     <label for="de">De:</label>
-                    <input type="data" name="de" id="de">
+                    <input type="date" name="de" id="de">
                 </div>
 
                 <div>
-                    <label for="ate">Ate:</label>
-                    <input type="data" name="ate" id="ate">
+                    <label for="ate">Até:</label>
+                    <input type="date" name="ate" id="ate">
                 </div>
                 <button id="filter-button" type="submit">Filtrar</button>
             </form>
         </dialog>
-        <ul id="cont">
+        <ul id="content">
         </ul>
-        <ul id="pag">
+        <ul id="pagination">
         </ul>
     </main>
     <footer>
